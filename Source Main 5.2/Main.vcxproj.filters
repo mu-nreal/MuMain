@@ -1257,7 +1257,7 @@
     <ClInclude Include="source\MUMain\stdafx.h">
       <Filter>MU\Common</Filter>
     </ClInclude>
-    <ClInclude Include="source\BaseCls.h">
+    <ClInclude Include="source\MUCore\BaseCls.h">
       <Filter>MU\Client\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\BoneManager.h">

@@ -741,7 +741,7 @@
     <ClInclude Include="source\MUHelper\MuHelper.h" />
     <ClInclude Include="source\MUHelper\MuHelperData.h" />
     <ClInclude Include="source\NewUIInventoryExtension.h" />
-    <ClInclude Include="source\BaseCls.h" />
+    <ClInclude Include="source\MUCore\BaseCls.h" />
     <ClInclude Include="source\BoneManager.h" />
     <ClInclude Include="source\Button.h" />
     <ClInclude Include="source\CameraMove.h" />

@@ -9,7 +9,7 @@
 #include "ZzzBMD.h"
 #include "ZzzInfomation.h"
 #include "ZzzObject.h"
-#include "BaseCls.h"
+#include "MUCore/BaseCls.h"
 
 #define PVS_NORMAL		( 0x00)
 #define PVS_FIXEDPOS	( 0x01)
