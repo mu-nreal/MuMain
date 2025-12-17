@@ -1,11 +1,9 @@
 ﻿#ifndef __BASE_CLASSES_H__
 #define __BASE_CLASSES_H__
 
-#include <algorithm>
 #include <cstddef>
-#include <cstdint>
+#include <cstring>
 #include <functional>
-#include <memory>
 #include <stdexcept>
 #include <utility>
 #include <vector>
@@ -790,11 +788,11 @@ class CDimension
 {
 protected:
     int m_nSize;
-    T* m_pData;
+    std::vector<T> m_Data;
 
 public:
     CDimension();	// Constructor
-    ~CDimension();	// Destructor
+    ~CDimension() = default;	// Destructor
 
     T Set(int nIndex, T Data);
     T Get(int nIndex);
@@ -805,22 +803,16 @@ protected:
 
 template <class T>
 CDimension<T>::CDimension()
+    : m_nSize(16)
+    , m_Data(static_cast<std::size_t>(m_nSize))
 {
-    m_nSize = 16;
-    m_pData = new T[m_nSize];
-}
-
-template <class T>
-CDimension<T>::~CDimension()
-{
-    delete[] m_pData;
 }
 
 template <class T>
 T CDimension<T>::Set(int nIndex, T Data)
 {
     CheckDimensionSize(nIndex);
-    m_pData[nIndex] = Data;
+    m_Data[static_cast<std::size_t>(nIndex)] = Data;
 
     return (Data);
 }
@@ -829,7 +821,7 @@ template <class T>
 T CDimension<T>::Get(int nIndex)
 {
     CheckDimensionSize(nIndex);
-    return (m_pData[nIndex]);
+    return (m_Data[static_cast<std::size_t>(nIndex)]);
 }
 
 template <class T>
@@ -838,17 +830,13 @@ void CDimension<T>::CheckDimensionSize(int nIndex)
     if (nIndex >= m_nSize)
     {
         int nNewSize = m_nSize;
-        for (; nNewSize <= nIndex; nNewSize *= 2)
+        while (nNewSize <= nIndex)
         {
+            nNewSize *= 2;
         }
 
-        T* pTempBuffer = new T[m_nSize];
-        memcpy(pTempBuffer, m_pData, m_nSize * sizeof(T));
-        delete[] m_pData;
-        m_pData = new T[nNewSize];
-        memcpy(m_pData, pTempBuffer, m_nSize * sizeof(T));
+        m_Data.resize(static_cast<std::size_t>(nNewSize));
         m_nSize = nNewSize;
-        delete[] pTempBuffer;
     }
 }
 
