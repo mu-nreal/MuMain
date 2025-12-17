@@ -85,7 +85,7 @@
 #include "Defined_Global.h"
 
 // Client
-#include "_define.h"
+#include "MUCore/_define.h"
 #include "_enum.h"
 #include "_types.h"
 #include "_struct.h"

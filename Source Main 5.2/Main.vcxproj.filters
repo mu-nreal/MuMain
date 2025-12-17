@@ -1233,7 +1233,7 @@
     <ClInclude Include="source\WinEx.h">
       <Filter>MU\Interface\ui</Filter>
     </ClInclude>
-    <ClInclude Include="source\_define.h">
+    <ClInclude Include="source\MUCore\_define.h">
       <Filter>MU\Common</Filter>
     </ClInclude>
     <ClInclude Include="source\_enum.h">
