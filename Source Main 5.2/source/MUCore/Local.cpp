@@ -4,11 +4,20 @@
 #include "MUMain/stdafx.h"
 #include "Local.h"
 
-bool CheckSpecialText(wchar_t* Text)
+bool CheckSpecialText(const wchar_t* text)
 {
-    for (auto* lpszCheck = (wchar_t*)Text; *lpszCheck; ++lpszCheck)
+    if (text == nullptr)
     {
-        if (!(48 <= *lpszCheck && *lpszCheck < 58) && !(65 <= *lpszCheck && *lpszCheck < 91) && !(97 <= *lpszCheck && *lpszCheck < 123))
+        return false;
+    }
+
+    for (const wchar_t* current = text; *current; ++current)
+    {
+        const wchar_t ch = *current;
+        const bool isDigit = (L'0' <= ch && ch <= L'9');
+        const bool isUpper = (L'A' <= ch && ch <= L'Z');
+        const bool isLower = (L'a' <= ch && ch <= L'z');
+        if (!(isDigit || isUpper || isLower))
         {
             return true;
         }

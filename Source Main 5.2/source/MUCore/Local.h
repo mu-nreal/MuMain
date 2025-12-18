@@ -2,4 +2,8 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
-extern bool CheckSpecialText(wchar_t* Text);
+bool CheckSpecialText(const wchar_t* text);
+inline bool CheckSpecialText(wchar_t* text)
+{
+    return CheckSpecialText(static_cast<const wchar_t*>(text));
+}
