@@ -8,7 +8,7 @@
 
 #include "Singleton.h"
 #include "MUCore/_enum.h"
-#include "_struct.h"
+#include "MUCore/_struct.h"
 
 class CSQuest : public Singleton<CSQuest>
 {

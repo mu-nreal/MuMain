@@ -1055,7 +1055,7 @@
     <ClInclude Include="source\MUCore\_define.h" />
     <ClInclude Include="source\MUCore\_enum.h" />
     <ClInclude Include="source\_GlobalFunctions.h" />
-    <ClInclude Include="source\_struct.h" />
+    <ClInclude Include="source\MUCore\_struct.h" />
     <ClInclude Include="source\_TextureIndex.h" />
     <ClInclude Include="source\_types.h" />
     <ClInclude Include="source\SpinLock.h" />

@@ -1242,7 +1242,7 @@
     <ClInclude Include="source\_GlobalFunctions.h">
       <Filter>MU\Common</Filter>
     </ClInclude>
-    <ClInclude Include="source\_struct.h">
+    <ClInclude Include="source\MUCore\_struct.h">
       <Filter>MU\Common</Filter>
     </ClInclude>
     <ClInclude Include="source\_TextureIndex.h">
