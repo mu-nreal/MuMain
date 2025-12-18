@@ -2112,6 +2112,9 @@
     <ClInclude Include="source\Utilities\Debouncer.h">
       <Filter>MU\Client\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="source\Utilities\EnumFlags.h">
+      <Filter>MU\Client\Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="source\_crypt.h">
       <Filter>MU\Client\Header Files</Filter>
     </ClInclude>
