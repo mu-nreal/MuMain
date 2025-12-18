@@ -1377,7 +1377,7 @@
     <ClInclude Include="source\SideHair.h">
       <Filter>MU\Client\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\Singleton.h">
+    <ClInclude Include="source\MUCore\Singleton.h">
       <Filter>MU\Client\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\SMD.h">
@@ -2070,7 +2070,7 @@
     <ClInclude Include="source\NewUIStorageInventoryExt.h">
       <Filter>MU\Client\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\SpinLock.h">
+    <ClInclude Include="source\MUCore\SpinLock.h">
       <Filter>MU\Client\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\Dotnet\PacketFunctions_ChatServer.h">

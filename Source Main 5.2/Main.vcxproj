@@ -979,7 +979,7 @@
     <ClInclude Include="source\ServerSelWin.h" />
     <ClInclude Include="source\ShadowVolume.h" />
     <ClInclude Include="source\SideHair.h" />
-    <ClInclude Include="source\Singleton.h" />
+    <ClInclude Include="source\MUCore\Singleton.h" />
     <ClInclude Include="source\SkillEffectMgr.h" />
     <ClInclude Include="source\SkillManager.h" />
     <ClInclude Include="source\Slider.h" />
@@ -1059,7 +1059,7 @@
     <ClInclude Include="source\MUCore\_struct.h" />
     <ClInclude Include="source\MUCore\_TextureIndex.h" />
     <ClInclude Include="source\MUCore\_types.h" />
-    <ClInclude Include="source\SpinLock.h" />
+    <ClInclude Include="source\MUCore\SpinLock.h" />
     <ClInclude Include="source\_crypt.h" />
   </ItemGroup>
   <ItemGroup>
