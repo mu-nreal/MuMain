@@ -1386,7 +1386,7 @@
     <ClInclude Include="source\SocketSystem.h">
       <Filter>MU\Client\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\stringset.h">
+    <ClInclude Include="source\MUCore\stringset.h">
       <Filter>MU\Client\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\SummonSystem.h">

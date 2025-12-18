@@ -987,7 +987,7 @@
     <ClInclude Include="source\SocketSystem.h" />
     <ClInclude Include="source\Sprite.h" />
     <ClInclude Include="source\MUMain\stdafx.h" />
-    <ClInclude Include="source\stringset.h" />
+    <ClInclude Include="source\MUCore\stringset.h" />
     <ClInclude Include="source\SummonSystem.h" />
     <ClInclude Include="source\SysMenuWin.h" />
     <ClInclude Include="source\TextureScript.h" />

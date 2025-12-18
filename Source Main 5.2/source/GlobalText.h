@@ -1,6 +1,6 @@
 #pragma once
 
-#include "stringset.h"
+#include "MUCore/stringset.h"
 #include <cwchar>
 #include <cwctype>
 #include <string>
