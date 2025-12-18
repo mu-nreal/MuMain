@@ -1,10 +1,42 @@
+#pragma once
+
 #ifdef CSK_DEBUG_MAP_PATHFINDING
 #define SHOW_PATH_INFO
 extern bool g_bShowPath;
 #endif // CSK_DEBUG_MAP_PATHFINDING
 
-#include <math.h>
+#include <algorithm>
+#include <cmath>
+
+#if !defined(MAX_PATH)
+#define MAX_PATH 260
+#endif
+
+#if !defined(_WINDOWS_) && !defined(_WINDEF_) && !defined(BASETYPES)
+using HANDLE = void*;
+struct HWND__;
+using HWND = HWND__*;
+using DWORD = unsigned long;
+using LPDWORD = DWORD*;
+struct OVERLAPPED;
+using LPOVERLAPPED = OVERLAPPED*;
+struct POINT
+{
+    long x;
+    long y;
+};
+#ifndef TRUE
+#define TRUE 1
+#endif
+#ifndef FALSE
+#define FALSE 0
+#endif
+#endif
+
+#include "MUCore/_define.h"
+#include "MUCore/_types.h"
 #include "MUCore/BaseCls.h"
+#include "Utilities/Log/ErrorReport.h"
 
 
 class PATH
@@ -65,10 +97,10 @@ public:
 
 inline PATH::PATH()
 {
-    m_pbyClosed = NULL;
-    m_piCostToStart = NULL;
-    m_pxPrev = NULL;
-    m_pyPrev = NULL;
+    m_pbyClosed = nullptr;
+    m_piCostToStart = nullptr;
+    m_pxPrev = nullptr;
+    m_pyPrev = nullptr;
 }
 
 inline PATH::~PATH()
@@ -81,22 +113,22 @@ inline void PATH::Clear(void)
     if (m_pbyClosed)
     {
         delete[] m_pbyClosed;
-        m_pbyClosed = NULL;
+        m_pbyClosed = nullptr;
     }
     if (m_piCostToStart)
     {
         delete[] m_piCostToStart;
-        m_piCostToStart = NULL;
+        m_piCostToStart = nullptr;
     }
     if (m_pxPrev)
     {
         delete[] m_pxPrev;
-        m_pxPrev = NULL;
+        m_pxPrev = nullptr;
     }
     if (m_pyPrev)
     {
         delete[] m_pyPrev;
-        m_pyPrev = NULL;
+        m_pyPrev = nullptr;
     }
     m_iMinClosed = MAX_INT_FORPATH;
     m_iMaxClosed = -1;
@@ -115,7 +147,7 @@ inline void PATH::SetMapDimensions(int iWidth, int iHeight, WORD* pbyMap)
     m_piCostToStart = new int[m_iSize];
     m_pxPrev = new int[m_iSize];
     m_pyPrev = new int[m_iSize];
-    ZeroMemory(m_pbyClosed, m_iSize * sizeof(BYTE));
+    std::fill(m_pbyClosed, m_pbyClosed + m_iSize, static_cast<EPathNodeState>(0));
 }
 
 inline bool PATH::AddClearPos(int iIndex)
@@ -138,7 +170,7 @@ inline void PATH::Init(void)
         return;
     }
 
-    ZeroMemory(&(m_pbyClosed[m_iMinClosed]), (m_iMaxClosed - m_iMinClosed + 1) * sizeof(BYTE));
+    std::fill(m_pbyClosed + m_iMinClosed, m_pbyClosed + m_iMaxClosed + 1, static_cast<EPathNodeState>(0));
     m_iMinClosed = MAX_INT_FORPATH;
     m_iMaxClosed = -1;
 }
@@ -431,6 +463,7 @@ inline POINT MovePoint(EPathDirection direction, POINT position)
     case EPathDirection::NORTHEAST:  position.y++; break;
     case EPathDirection::NORTH:      position.x--; position.y++; break;
     case EPathDirection::NORTHWEST:  position.x--; break;
+    default: break;
     }
     return position;
 }
