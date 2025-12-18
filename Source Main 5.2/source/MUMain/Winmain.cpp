@@ -112,7 +112,7 @@ void StopMusic()
     wzAudioStop();
 }
 
-void StopMp3(char* Name, BOOL bEnforce)
+void StopMp3(const char* Name, BOOL bEnforce)
 {
     if (!m_MusicOnOff && !bEnforce) return;
 
@@ -125,7 +125,7 @@ void StopMp3(char* Name, BOOL bEnforce)
     }
 }
 
-void PlayMp3(char* Name, BOOL bEnforce)
+void PlayMp3(const char* Name, BOOL bEnforce)
 {
     if (Destroy) return;
     if (!m_MusicOnOff && !bEnforce) return;
@@ -135,8 +135,8 @@ void PlayMp3(char* Name, BOOL bEnforce)
         return;
     }
     
-    wzAudioPlay(Name, 1);
-        strcpy(Mp3FileName, Name);
+    wzAudioPlay(const_cast<char*>(Name), 1);
+    strcpy(Mp3FileName, Name);
 }
 
 bool IsEndMp3()
