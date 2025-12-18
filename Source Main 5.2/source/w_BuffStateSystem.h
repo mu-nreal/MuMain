@@ -1,8 +1,12 @@
 #pragma once
 
+#include <cassert>
+
+#include "MUCore/_define.h"
 #include "w_BuffStateValueControl.h"
 #include "w_BuffTimeControl.h"
 #include "w_BuffScriptLoader.h"
+#include "w_WindowMessageHandler.h"
 
 SmartPointer(BuffStateSystem);
 class BuffStateSystem : public util::WindowMessageHandler

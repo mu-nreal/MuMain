@@ -3,6 +3,7 @@
 #pragma once
 
 #include <vector>
+#include <cstdint>
 #include "./Math/ZzzMathLib.h"
 
 class	CInterpolateContainer
@@ -136,18 +137,18 @@ public:
     unsigned short PriorAction;
 
 public:
-    BYTE          ExtState;
-    BYTE          Teleport;
-    BYTE          Kind;
-    WORD		Skill;
-    BYTE		  m_byNumCloth;
+    std::uint8_t  ExtState;
+    std::uint8_t  Teleport;
+    std::uint8_t  Kind;
+    std::uint16_t Skill;
+    std::uint8_t	  m_byNumCloth;
     float		  m_byHurtByDeathstab;
-    BYTE          WeaponLevel;
-    BYTE          DamageTime;
-    BYTE          m_byBuildTime;
-    BYTE		  m_bySkillCount;
-    BYTE		m_bySkillSerialNum;
-    BYTE		  Block;
+    std::uint8_t  WeaponLevel;
+    std::uint8_t  DamageTime;
+    std::uint8_t  m_byBuildTime;
+    std::uint8_t	  m_bySkillCount;
+    std::uint8_t		m_bySkillSerialNum;
+    std::uint8_t	  Block;
     void* m_pCloth;
 
 public:
@@ -168,7 +169,7 @@ public:
     int           LinkBone;
 
 public:
-    DWORD			m_dwTime;
+    std::uint32_t			m_dwTime;
 
 public:
     float         Scale;

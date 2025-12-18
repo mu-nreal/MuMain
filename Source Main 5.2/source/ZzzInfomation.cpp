@@ -292,6 +292,10 @@ void OpenSkillScript(wchar_t* FileName)
     }
 }
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 BOOL IsValidateSkillIdx(INT iSkillIdx)
 {
     if (iSkillIdx >= MAX_SKILLS || iSkillIdx < 0)
@@ -338,6 +342,10 @@ BOOL IsCorrectSkillType_CommonAttack(INT iSkillSeq)
 {
     return IsCorrectSkillType(iSkillSeq, eTypeSkill_CommonAttack);
 }
+
+#ifdef __cplusplus
+}
+#endif
 
 ///////////////////////////////////////////////////////////////////////////////
 // dialog

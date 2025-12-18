@@ -1,5 +1,10 @@
 #pragma once
 
+#include <list>
+
+#include "MUCore/_enum.h"
+#include "MUCore/_types.h"
+
 SmartPointer(Buff);
 
 class Buff

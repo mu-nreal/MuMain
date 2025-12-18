@@ -3,6 +3,9 @@
 #include "ZzzInfomation.h"
 #include "SpinLock.h"
 
+struct HDC__;// Forward declaration to avoid pulling windows.h into headers
+typedef HDC__* HDC;
+
 extern EGameScene SceneFlag;
 
 extern int  ErrorMessage;

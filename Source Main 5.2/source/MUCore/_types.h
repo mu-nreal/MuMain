@@ -7,6 +7,15 @@
 
 #include "_enum.h"
 
+// Windows-style annotation fallbacks for non-Windows toolchains or headers.
+#ifndef IN
+#define IN
+#endif
+
+#ifndef OUT
+#define OUT
+#endif
+
 // Scalar and legacy vector aliases used across the client.
 using vec_t = float;
 using vec2_t = vec_t[2];
@@ -51,6 +60,14 @@ using STRING = std::string;
 using PWCHAR = wchar_t*;
 using WCHAR = wchar_t;
 using WSTRING = std::wstring;
+#if !defined(_WINDOWS_) && !defined(_WINDEF_) && !defined(_MINWINDEF_) && !defined(BASETYPES)
+using DWORD = unsigned long;
+using BYTE = unsigned char;
+using SHORT = short;
+using WORD = unsigned short;
+using UINT = unsigned int;
+using BOOL = int;
+#endif
 
 // Buff state lookup helper.
 using BuffStateMap = std::map<eBuffState, std::uint32_t>;

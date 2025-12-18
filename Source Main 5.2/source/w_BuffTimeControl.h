@@ -1,5 +1,12 @@
 #pragma once
 
+#include <map>
+#include <string>
+#include <windows.h>
+
+#include "MUCore/_define.h"
+#include "MUCore/_enum.h"
+
 SmartPointer(BuffTimeControl);
 
 class BuffTimeControl

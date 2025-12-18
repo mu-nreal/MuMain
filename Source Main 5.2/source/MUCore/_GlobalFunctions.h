@@ -1,8 +1,22 @@
-#ifndef _GLOBAL_FUNCTIONS_H
-#define _GLOBAL_FUNCTIONS_H
+#pragma once
+
+#include <array>
+#include <cassert>
+#include <cstdarg>
+#include <cstdint>
+#include <cstdio>
+#include <cwchar>
 
 #include "ZzzScene.h"
 #include "w_BuffStateSystem.h"
+
+#ifndef TEXT
+#ifdef _UNICODE
+#define TEXT(str) L##str
+#else
+#define TEXT(str) str
+#endif
+#endif
 
 class BuffStateSystem;
 class BuffScriptLoader;
@@ -89,41 +103,54 @@ BuffStateValueControl& TheBuffStateValueControl();
 #define g_BuffStateValueString( outstr, type ) \
 	TheBuffStateValueControl().GetBuffValueString( outstr, type )
 
-inline unsigned long RGBA(unsigned char r, unsigned char g, unsigned char b, unsigned char a)
+inline constexpr std::uint32_t RGBA(std::uint8_t r, std::uint8_t g, std::uint8_t b, std::uint8_t a)
 {
-    return (r)+(g << 8) + (b << 16) + (a << 24);
+    return static_cast<std::uint32_t>(r)
+        | (static_cast<std::uint32_t>(g) << 8)
+        | (static_cast<std::uint32_t>(b) << 16)
+        | (static_cast<std::uint32_t>(a) << 24);
 }
-inline unsigned char GetAlpha(unsigned long rgba)
+inline constexpr std::uint8_t GetAlpha(std::uint32_t rgba)
 {
-    return ((rgba) >> 24);
+    return static_cast<std::uint8_t>(rgba >> 24);
 }
-inline unsigned char GetRed(unsigned long rgba)
+inline constexpr std::uint8_t GetRed(std::uint32_t rgba)
 {
-    return ((rgba) & 0xff);
+    return static_cast<std::uint8_t>(rgba & 0xff);
 }
-inline unsigned char GetGreen(unsigned long rgba)
+inline constexpr std::uint8_t GetGreen(std::uint32_t rgba)
 {
-    return (((rgba) >> 8) & 0xff);
+    return static_cast<std::uint8_t>((rgba >> 8) & 0xff);
 }
-inline unsigned char GetBlue(unsigned long rgba)
+inline constexpr std::uint8_t GetBlue(std::uint32_t rgba)
 {
-    return (((rgba) >> 16) & 0xff);
+    return static_cast<std::uint8_t>((rgba >> 16) & 0xff);
 }
 
 #ifdef CSK_DEBUG_RENDER_BOUNDINGBOX
 extern bool g_bRenderBoundingBox;
 #endif // CSK_DEBUG_RENDER_BOUNDINGBOX
 
-inline void __TraceF(const TCHAR* pFmt, ...)
+inline void __TraceF(const char* pFmt, ...)
 {
 #ifdef _DEBUG
-    //TCHAR	szMsg[4096];
-    //va_list	pArgList;
-    //va_start(pArgList, pFmt);
-    //_vsntprintf(szMsg, sizeof(szMsg) / sizeof(TCHAR), pFmt, pArgList);
-    //va_end(pArgList);
-    //OutputDebugString(szMsg);
+    std::array<char, 1024> buffer = {};
+    va_list argList;
+    va_start(argList, pFmt);
+    std::vsnprintf(buffer.data(), buffer.size(), pFmt, argList);
+    va_end(argList);
+    std::fputs(buffer.data(), stderr);
 #endif // _DEBUG
 }
 
-#endif	// _GLOBAL_FUNCTIONS_H
+inline void __TraceF(const wchar_t* pFmt, ...)
+{
+#ifdef _DEBUG
+    std::array<wchar_t, 1024> buffer = {};
+    va_list argList;
+    va_start(argList, pFmt);
+    std::vswprintf(buffer.data(), buffer.size(), pFmt, argList);
+    va_end(argList);
+    std::fputws(buffer.data(), stderr);
+#endif // _DEBUG
+}

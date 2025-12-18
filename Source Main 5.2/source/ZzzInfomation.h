@@ -3,6 +3,8 @@
 
 #pragma once
 
+#include "MUCore/_define.h"
+#include "MUCore/_struct.h"
 #include "GlobalText.h"
 
 void SaveTextFile(wchar_t* FileName);
@@ -43,12 +45,20 @@ extern SKILL_ATTRIBUTE* SkillAttribute;
 
 void OpenSkillScript(wchar_t* FileName);
 
-BOOL IsValidateSkillIdx(INT iSkillIdx);
-BOOL IsCorrectSkillType(INT iSkillSeq, eTypeSkill iSkillTypeIdx);
-BOOL IsCorrectSkillType_FrendlySkill(INT iSkillSeq);
-BOOL IsCorrectSkillType_Buff(INT iSkillSeq);
-BOOL IsCorrectSkillType_DeBuff(INT iSkillSeq);
-BOOL IsCorrectSkillType_CommonAttack(INT iSkillSeq);
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+BOOL IsValidateSkillIdx(int iSkillIdx);
+BOOL IsCorrectSkillType(int iSkillSeq, eTypeSkill iSkillTypeIdx);
+BOOL IsCorrectSkillType_FrendlySkill(int iSkillSeq);
+BOOL IsCorrectSkillType_Buff(int iSkillSeq);
+BOOL IsCorrectSkillType_DeBuff(int iSkillSeq);
+BOOL IsCorrectSkillType_CommonAttack(int iSkillSeq);
+
+#ifdef __cplusplus
+}
+#endif
 
 extern CLASS_ATTRIBUTE ClassAttribute[MAX_CLASS];
 
