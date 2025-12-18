@@ -3,6 +3,10 @@
 
 #pragma once
 
+#include <cstdint>
+#include <vector>
+
+#include "_define.h"
 #include "w_Buff.h"
 
 #include "w_ObjectInfo.h"
@@ -23,32 +27,32 @@ namespace info
     {
         wchar_t Name[30];
         bool TwoHand;
-        WORD Level;
-        BYTE m_byItemSlot;
-        BYTE m_bySkillIndex;
-        BYTE Width;
-        BYTE Height;
-        BYTE DamageMin;
-        BYTE DamageMax;
-        BYTE SuccessfulBlocking;
-        BYTE Defense;
-        BYTE MagicDefense;
-        BYTE WeaponSpeed;
-        BYTE WalkSpeed;
-        BYTE Durability;
-        BYTE MagicDur;
-        BYTE MagicPower;
-        WORD RequireStrength;
-        WORD RequireDexterity;
-        WORD RequireEnergy;
-        WORD  RequireVitality;
-        WORD RequireCharisma;
-        WORD RequireLevel;
-        BYTE Value;
+        std::uint16_t Level;
+        std::uint8_t m_byItemSlot;
+        std::uint8_t m_bySkillIndex;
+        std::uint8_t Width;
+        std::uint8_t Height;
+        std::uint8_t DamageMin;
+        std::uint8_t DamageMax;
+        std::uint8_t SuccessfulBlocking;
+        std::uint8_t Defense;
+        std::uint8_t MagicDefense;
+        std::uint8_t WeaponSpeed;
+        std::uint8_t WalkSpeed;
+        std::uint8_t Durability;
+        std::uint8_t MagicDur;
+        std::uint8_t MagicPower;
+        std::uint16_t RequireStrength;
+        std::uint16_t RequireDexterity;
+        std::uint16_t RequireEnergy;
+        std::uint16_t RequireVitality;
+        std::uint16_t RequireCharisma;
+        std::uint16_t RequireLevel;
+        std::uint8_t Value;
         int  iZen;
-        BYTE  AttType;
-        BYTE RequireClass[MAX_CLASS];
-        BYTE Resistance[MAX_RESISTANCE];
+        std::uint8_t  AttType;
+        std::uint8_t RequireClass[MAX_CLASS];
+        std::uint8_t Resistance[MAX_RESISTANCE];
     };
 
     struct Script_Silde
@@ -68,7 +72,7 @@ namespace info
 
     struct Script_Credit
     {
-        BYTE	byClass;
+        std::uint8_t	byClass;
         wchar_t	szName[32];
     };
 
@@ -84,26 +88,26 @@ namespace info
 
     struct Script_Quest_Class_Act
     {
-        BYTE    chLive;
-        BYTE    byQuestType;
-        WORD    wItemType;
-        BYTE    byItemSubType;
-        BYTE	byItemLevel;
-        BYTE    byItemNum;
-        BYTE    byRequestType;
-        BYTE    byRequestClass[MAX_CLASS];
+        std::uint8_t    chLive;
+        std::uint8_t    byQuestType;
+        std::uint16_t    wItemType;
+        std::uint8_t    byItemSubType;
+        std::uint8_t	byItemLevel;
+        std::uint8_t    byItemNum;
+        std::uint8_t    byRequestType;
+        std::uint8_t    byRequestClass[MAX_CLASS];
         short   shQuestStartText[4];
     };
 
     struct Script_Quest_Class_Request
     {
-        BYTE    byLive;
-        BYTE    byType;
-        WORD    wCompleteQuestIndex;
-        WORD    wLevelMin;
-        WORD    wLevelMax;
-        WORD	wRequestStrength;
-        DWORD   dwZen;
+        std::uint8_t    byLive;
+        std::uint8_t    byType;
+        std::uint16_t    wCompleteQuestIndex;
+        std::uint16_t    wLevelMin;
+        std::uint16_t    wLevelMax;
+        std::uint16_t	wRequestStrength;
+        std::uint32_t   dwZen;
         short   shErrorText;
     };
 
@@ -111,7 +115,7 @@ namespace info
     {
         short   shQuestConditionNum;
         short   shQuestRequestNum;
-        WORD    wNpcType;
+        std::uint16_t    wNpcType;
         char    strQuestName[32];
 
         Script_Quest_Class_Act     QuestAct[MAX_QUEST_CONDITION];
@@ -122,16 +126,16 @@ namespace info
 //infomation start
 typedef struct
 {
-    BYTE Flag;
-    BYTE Map;
-    BYTE x1;
-    BYTE y1;
-    BYTE x2;
-    BYTE y2;
-    WORD Target;
-    BYTE Angle;
-    WORD Level;
-    WORD m_wMaxLevel;
+    std::uint8_t Flag;
+    std::uint8_t Map;
+    std::uint8_t x1;
+    std::uint8_t y1;
+    std::uint8_t x2;
+    std::uint8_t y2;
+    std::uint16_t Target;
+    std::uint8_t Angle;
+    std::uint16_t Level;
+    std::uint16_t m_wMaxLevel;
 } GATE_ATTRIBUTE;
 
 typedef struct
@@ -147,75 +151,75 @@ typedef struct
 {
     char Name[MAX_ITEM_NAME];
     bool TwoHand;
-    WORD Level;
-    BYTE m_byItemSlot;
-    WORD m_wSkillIndex;
-    BYTE Width;
-    BYTE Height;
-    BYTE DamageMin;
-    BYTE DamageMax;
-    BYTE SuccessfulBlocking;
-    BYTE Defense;
-    BYTE MagicDefense;
-    BYTE WeaponSpeed;
-    BYTE WalkSpeed;
-    BYTE Durability;
-    BYTE MagicDur;
-    BYTE MagicPower;
-    WORD RequireStrength;
-    WORD RequireDexterity;
-    WORD RequireEnergy;
-    WORD RequireVitality;
-    WORD RequireCharisma;
-    WORD RequireLevel;
-    BYTE Value;
+    std::uint16_t Level;
+    std::uint8_t m_byItemSlot;
+    std::uint16_t m_wSkillIndex;
+    std::uint8_t Width;
+    std::uint8_t Height;
+    std::uint8_t DamageMin;
+    std::uint8_t DamageMax;
+    std::uint8_t SuccessfulBlocking;
+    std::uint8_t Defense;
+    std::uint8_t MagicDefense;
+    std::uint8_t WeaponSpeed;
+    std::uint8_t WalkSpeed;
+    std::uint8_t Durability;
+    std::uint8_t MagicDur;
+    std::uint8_t MagicPower;
+    std::uint16_t RequireStrength;
+    std::uint16_t RequireDexterity;
+    std::uint16_t RequireEnergy;
+    std::uint16_t RequireVitality;
+    std::uint16_t RequireCharisma;
+    std::uint16_t RequireLevel;
+    std::uint8_t Value;
     int  iZen;
-    BYTE  AttType;
-    BYTE RequireClass[MAX_CLASS];
-    BYTE Resistance[MAX_RESISTANCE + 1];
+    std::uint8_t  AttType;
+    std::uint8_t RequireClass[MAX_CLASS];
+    std::uint8_t Resistance[MAX_RESISTANCE + 1];
 } ITEM_ATTRIBUTE_FILE;
 
 typedef struct
 {
     wchar_t Name[MAX_ITEM_NAME];
     bool TwoHand;
-    WORD Level;
-    BYTE m_byItemSlot;
-    WORD m_wSkillIndex;
-    BYTE Width;
-    BYTE Height;
-    BYTE DamageMin;
-    BYTE DamageMax;
-    BYTE SuccessfulBlocking;
-    BYTE Defense;
-    BYTE MagicDefense;
-    BYTE WeaponSpeed;
-    BYTE WalkSpeed;
-    BYTE Durability;
-    BYTE MagicDur;
-    BYTE MagicPower;
-    WORD RequireStrength;
-    WORD RequireDexterity;
-    WORD RequireEnergy;
-    WORD RequireVitality;
-    WORD RequireCharisma;
-    WORD RequireLevel;
-    BYTE Value;
+    std::uint16_t Level;
+    std::uint8_t m_byItemSlot;
+    std::uint16_t m_wSkillIndex;
+    std::uint8_t Width;
+    std::uint8_t Height;
+    std::uint8_t DamageMin;
+    std::uint8_t DamageMax;
+    std::uint8_t SuccessfulBlocking;
+    std::uint8_t Defense;
+    std::uint8_t MagicDefense;
+    std::uint8_t WeaponSpeed;
+    std::uint8_t WalkSpeed;
+    std::uint8_t Durability;
+    std::uint8_t MagicDur;
+    std::uint8_t MagicPower;
+    std::uint16_t RequireStrength;
+    std::uint16_t RequireDexterity;
+    std::uint16_t RequireEnergy;
+    std::uint16_t RequireVitality;
+    std::uint16_t RequireCharisma;
+    std::uint16_t RequireLevel;
+    std::uint8_t Value;
     int  iZen;
-    BYTE  AttType;
-    BYTE RequireClass[MAX_CLASS];
-    BYTE Resistance[MAX_RESISTANCE + 1];
+    std::uint8_t  AttType;
+    std::uint8_t RequireClass[MAX_CLASS];
+    std::uint8_t Resistance[MAX_RESISTANCE + 1];
 } ITEM_ATTRIBUTE;
 
 typedef struct _MASTER_LEVEL_DATA
 {
-    BYTE Width;
+    std::uint8_t Width;
     int Ability[8][4];
 }MASTER_LEVEL_DATA;
 
 typedef struct
 {
-    BYTE Kind;
+    std::uint8_t Kind;
     int	 Location[2];
     int  Rotation;
     char Name[MAX_MINIMAP_NAME];
@@ -223,7 +227,7 @@ typedef struct
 
 typedef struct
 {
-    BYTE Kind;
+    std::uint8_t Kind;
     int	 Location[2];
     int  Rotation;
     wchar_t Name[MAX_MINIMAP_NAME];
@@ -234,63 +238,63 @@ typedef struct tagITEM
 {
     short Type;
     int   Level;
-    BYTE  Durability;
-    BYTE OptionLevel;
-    BYTE OptionType;
-    BYTE ExcellentFlags;
-    BYTE AncientDiscriminator; // 0 = no ancient;
-    BYTE AncientBonusOption;
-    WORD  Jewel_Of_Harmony_Option;
-    WORD  Jewel_Of_Harmony_OptionLevel;
+    std::uint8_t  Durability;
+    std::uint8_t OptionLevel;
+    std::uint8_t OptionType;
+    std::uint8_t ExcellentFlags;
+    std::uint8_t AncientDiscriminator; // 0 = no ancient;
+    std::uint8_t AncientBonusOption;
+    std::uint16_t  Jewel_Of_Harmony_Option;
+    std::uint16_t  Jewel_Of_Harmony_OptionLevel;
     bool HasSkill;
     bool HasLuck;
-    BYTE  Part;
-    BYTE  Class;
+    std::uint8_t  Part;
+    std::uint8_t  Class;
     bool  TwoHand;
-    WORD  DamageMin;
-    WORD  DamageMax;
-    BYTE  SuccessfulBlocking;
-    WORD  Defense;
-    WORD  MagicDefense;
-    BYTE  MagicPower;
-    BYTE  WeaponSpeed;
-    WORD  WalkSpeed;
+    std::uint16_t  DamageMin;
+    std::uint16_t  DamageMax;
+    std::uint8_t  SuccessfulBlocking;
+    std::uint16_t  Defense;
+    std::uint16_t  MagicDefense;
+    std::uint8_t  MagicPower;
+    std::uint8_t  WeaponSpeed;
+    std::uint16_t  WalkSpeed;
 
-    WORD  RequireStrength;
-    WORD  RequireDexterity;
-    WORD  RequireEnergy;
-    WORD  RequireVitality;
-    WORD  RequireCharisma;
-    WORD  RequireLevel;
-    BYTE  SpecialNum;
-    WORD  Special[MAX_ITEM_SPECIAL];
-    BYTE  SpecialValue[MAX_ITEM_SPECIAL];
-    DWORD Key;	//client olny
+    std::uint16_t  RequireStrength;
+    std::uint16_t  RequireDexterity;
+    std::uint16_t  RequireEnergy;
+    std::uint16_t  RequireVitality;
+    std::uint16_t  RequireCharisma;
+    std::uint16_t  RequireLevel;
+    std::uint8_t  SpecialNum;
+    std::uint16_t  Special[MAX_ITEM_SPECIAL];
+    std::uint8_t  SpecialValue[MAX_ITEM_SPECIAL];
+    std::uint32_t Key;	//client olny
 
-    BYTE bySelectedSlotIndex;
+    std::uint8_t bySelectedSlotIndex;
 
     union
     {
-        BYTE  x;    //client olny
-        BYTE  lineal_pos;
+        std::uint8_t  x;    //client olny
+        std::uint8_t  lineal_pos;
     };
     union
     {
-        BYTE  y;    //client olny
-        BYTE  ex_src_type;
+        std::uint8_t  y;    //client olny
+        std::uint8_t  ex_src_type;
     };
     bool option_380;
 
-    BYTE SocketCount;
-    BYTE bySocketOption[MAX_SOCKETS];
-    BYTE SocketSeedID[MAX_SOCKETS];
-    BYTE SocketSphereLv[MAX_SOCKETS];
-    BYTE SocketSeedSetOption;
+    std::uint8_t SocketCount;
+    std::uint8_t bySocketOption[MAX_SOCKETS];
+    std::uint8_t SocketSeedID[MAX_SOCKETS];
+    std::uint8_t SocketSphereLv[MAX_SOCKETS];
+    std::uint8_t SocketSeedSetOption;
 
     int   Number;
-    BYTE  Color;
+    std::uint8_t  Color;
 
-    BYTE byColorState;
+    std::uint8_t byColorState;
 
     bool	bPeriodItem;
     bool	bExpiredPeriod;
@@ -304,29 +308,29 @@ private:
 
 typedef struct
 {
-    WORD Life;
-    WORD MoveSpeed;
-    WORD AttackSpeed;
-    WORD AttackDamageMin;
-    WORD AttackDamageMax;
-    WORD Defense;
-    WORD MagicDefense;
-    WORD AttackRating;
-    WORD SuccessfulBlocking;
+    std::uint16_t Life;
+    std::uint16_t MoveSpeed;
+    std::uint16_t AttackSpeed;
+    std::uint16_t AttackDamageMin;
+    std::uint16_t AttackDamageMax;
+    std::uint16_t Defense;
+    std::uint16_t MagicDefense;
+    std::uint16_t AttackRating;
+    std::uint16_t SuccessfulBlocking;
 } MONSTER_ATTRIBUTE;
 
 typedef struct
 {
-    WORD				Type;
+    std::uint16_t				Type;
     wchar_t				Name[MAX_MONSTER_NAME];
-    WORD				Level;
+    std::uint16_t				Level;
     MONSTER_ATTRIBUTE	Attribute;
 } MONSTER_SCRIPT;
 
 typedef struct
 {
     short             Type;
-    BYTE              Level;
+    std::uint8_t              Level;
     int               Experince;
     MONSTER_ATTRIBUTE Attribute;
 } MONSTER;
@@ -334,79 +338,79 @@ typedef struct
 typedef struct
 {
     /*+00*/	char Name[MAX_SKILL_NAME];
-    /*+32*/	WORD Level;
-    /*+34*/	WORD Damage;
-    /*+36*/	WORD Mana;
-    /*+38*/	WORD AbilityGuage;
-    /*+40*/	DWORD Distance;
+    /*+32*/	std::uint16_t Level;
+    /*+34*/	std::uint16_t Damage;
+    /*+36*/	std::uint16_t Mana;
+    /*+38*/	std::uint16_t AbilityGuage;
+    /*+40*/	std::uint32_t Distance;
     /*+44*/	int Delay;
     /*+48*/	int Energy;
-    /*+52*/	WORD Charisma;
-    /*+54*/	BYTE MasteryType;
-    /*+55*/	BYTE SkillUseType;
-    /*+56*/	DWORD SkillBrand;
-    /*+60*/	BYTE KillCount;
-    /*+61*/	BYTE RequireDutyClass[MAX_DUTY_CLASS];
-    /*+64*/	BYTE RequireClass[MAX_CLASS];
-    /*+71*/	BYTE SkillRank;
-    /*+72*/	WORD Magic_Icon;
-    /*+74*/	BYTE TypeSkill;
+    /*+52*/	std::uint16_t Charisma;
+    /*+54*/	std::uint8_t MasteryType;
+    /*+55*/	std::uint8_t SkillUseType;
+    /*+56*/	std::uint32_t SkillBrand;
+    /*+60*/	std::uint8_t KillCount;
+    /*+61*/	std::uint8_t RequireDutyClass[MAX_DUTY_CLASS];
+    /*+64*/	std::uint8_t RequireClass[MAX_CLASS];
+    /*+71*/	std::uint8_t SkillRank;
+    /*+72*/	std::uint16_t Magic_Icon;
+    /*+74*/	std::uint8_t TypeSkill;
     /*+76*/	int Strength;
     /*+80*/	int Dexterity;
-    /*+84*/	BYTE ItemSkill;
-    /*+85*/	BYTE IsDamage;
-    /*+86*/	WORD Effect;
+    /*+84*/	std::uint8_t ItemSkill;
+    /*+85*/	std::uint8_t IsDamage;
+    /*+86*/	std::uint16_t Effect;
 } SKILL_ATTRIBUTE_FILE;
 
 typedef struct
 {
     wchar_t Name[MAX_SKILL_NAME];
-    WORD Level;
-    WORD Damage;
-    WORD Mana;
-    WORD AbilityGuage;
-    DWORD Distance;
+    std::uint16_t Level;
+    std::uint16_t Damage;
+    std::uint16_t Mana;
+    std::uint16_t AbilityGuage;
+    std::uint32_t Distance;
     int Delay;
     int Energy;
-    WORD Charisma;
-    BYTE MasteryType;
-    BYTE SkillUseType;
-    DWORD SkillBrand;
-    BYTE KillCount;
-    BYTE RequireDutyClass[MAX_DUTY_CLASS];
-    BYTE RequireClass[MAX_CLASS];
-    BYTE SkillRank;
-    WORD Magic_Icon;
-    BYTE TypeSkill;
+    std::uint16_t Charisma;
+    std::uint8_t MasteryType;
+    std::uint8_t SkillUseType;
+    std::uint32_t SkillBrand;
+    std::uint8_t KillCount;
+    std::uint8_t RequireDutyClass[MAX_DUTY_CLASS];
+    std::uint8_t RequireClass[MAX_CLASS];
+    std::uint8_t SkillRank;
+    std::uint16_t Magic_Icon;
+    std::uint8_t TypeSkill;
     int Strength;
     int Dexterity;
-    BYTE ItemSkill;
-    BYTE IsDamage;
-    WORD Effect;
+    std::uint8_t ItemSkill;
+    std::uint8_t IsDamage;
+    std::uint16_t Effect;
 } SKILL_ATTRIBUTE;
 /*
 typedef struct
 {
     wchar_t Name[32];
-    BYTE Level;
-    WORD Damage;
-    WORD Mana;
-    WORD AbilityGuage;
-    BYTE Distance;
+    std::uint8_t Level;
+    std::uint16_t Damage;
+    std::uint16_t Mana;
+    std::uint16_t AbilityGuage;
+    std::uint8_t Distance;
     int  Delay;
 
     int Energy;
 
-    WORD Charisma;
-    BYTE MasteryType;
-    BYTE SkillUseType;
-    BYTE SkillBrand;
-    BYTE KillCount;
-    BYTE RequireDutyClass[MAX_DUTY_CLASS];
-    BYTE RequireClass[MAX_CLASS];
-    WORD Magic_Icon;
+    std::uint16_t Charisma;
+    std::uint8_t MasteryType;
+    std::uint8_t SkillUseType;
+    std::uint8_t SkillBrand;
+    std::uint8_t KillCount;
+    std::uint8_t RequireDutyClass[MAX_DUTY_CLASS];
+    std::uint8_t RequireClass[MAX_CLASS];
+    std::uint16_t Magic_Icon;
 
-    BYTE TypeSkill;
+    std::uint8_t TypeSkill;
 
     int Strength;
     int Dexterity;
@@ -415,18 +419,18 @@ typedef struct
 
 typedef struct
 {
-    WORD Strength;
-    WORD Dexterity;
-    WORD Vitality;
-    WORD Energy;
-    WORD Life;
-    WORD Mana;
-    WORD Shield;
-    BYTE LevelLife;
-    BYTE LevelMana;
-    BYTE VitalityToLife;
-    BYTE EnergyToMana;
-    BYTE ClassSkill[MAX_SKILLS];
+    std::uint16_t Strength;
+    std::uint16_t Dexterity;
+    std::uint16_t Vitality;
+    std::uint16_t Energy;
+    std::uint16_t Life;
+    std::uint16_t Mana;
+    std::uint16_t Shield;
+    std::uint8_t LevelLife;
+    std::uint8_t LevelMana;
+    std::uint8_t VitalityToLife;
+    std::uint8_t EnergyToMana;
+    std::uint8_t ClassSkill[MAX_SKILLS];
 } CLASS_ATTRIBUTE;
 
 class CSkillTreeInfo
@@ -439,7 +443,7 @@ public:
         this->skillNextValue = 0.0f;
     }
 
-    CSkillTreeInfo(BYTE point, float value, float nextValue)
+    CSkillTreeInfo(std::uint8_t point, float value, float nextValue)
     {
         this->skillLevel = point;
         this->skillValue = value;
@@ -448,11 +452,11 @@ public:
 
     ~CSkillTreeInfo() = default;
 
-    BYTE GetSkillLevel() const { return this->skillLevel; }
+    std::uint8_t GetSkillLevel() const { return this->skillLevel; }
     float GetSkillValue() const { return this->skillValue; }
     float GetSkillNextValue() const { return this->skillNextValue; }
 private:
-    BYTE skillLevel;
+    std::uint8_t skillLevel;
     float skillValue;
     float skillNextValue;
 };
@@ -461,67 +465,67 @@ typedef struct
 {
     wchar_t Name[MAX_ID_SIZE + 1];
     CLASS_TYPE Class;
-    BYTE Skin;
-    BYTE InventoryExtensions;
-    BYTE IsVaultExtended;
-    WORD Level;
+    std::uint8_t Skin;
+    std::uint8_t InventoryExtensions;
+    std::uint8_t IsVaultExtended;
+    std::uint16_t Level;
 
-    WORD Strength;
-    WORD Dexterity;
-    WORD Vitality;
-    WORD Energy;
-    WORD Charisma;
-    DWORD Life;
-    DWORD Mana;
-    DWORD LifeMax;
-    DWORD ManaMax;
-    DWORD Shield;
-    DWORD ShieldMax;
-    DWORD SkillMana;
-    DWORD SkillManaMax;
-    WORD AttackRatingPK;
-    WORD SuccessfulBlockingPK;
-    WORD AddStrength;
-    WORD AddDexterity;
-    WORD AddVitality;
-    WORD AddEnergy;
-    WORD AddLifeMax;
-    WORD AddManaMax;
-    WORD AddCharisma;
-    BYTE Ability;
+    std::uint16_t Strength;
+    std::uint16_t Dexterity;
+    std::uint16_t Vitality;
+    std::uint16_t Energy;
+    std::uint16_t Charisma;
+    std::uint32_t Life;
+    std::uint32_t Mana;
+    std::uint32_t LifeMax;
+    std::uint32_t ManaMax;
+    std::uint32_t Shield;
+    std::uint32_t ShieldMax;
+    std::uint32_t SkillMana;
+    std::uint32_t SkillManaMax;
+    std::uint16_t AttackRatingPK;
+    std::uint16_t SuccessfulBlockingPK;
+    std::uint16_t AddStrength;
+    std::uint16_t AddDexterity;
+    std::uint16_t AddVitality;
+    std::uint16_t AddEnergy;
+    std::uint16_t AddLifeMax;
+    std::uint16_t AddManaMax;
+    std::uint16_t AddCharisma;
+    std::uint8_t Ability;
     float AbilityTime[3]; // Number of reference frames
 
     short AddPoint;
     short MaxAddPoint;
-    WORD wMinusPoint;
-    WORD wMaxMinusPoint;
-    WORD AttackSpeed;
-    WORD MaxAttackSpeed; // Maximum attack speed which can be reached on the server.
-    WORD AttackRating;
-    WORD AttackDamageMinRight;
-    WORD AttackDamageMaxRight;
-    WORD AttackDamageMinLeft;
-    WORD AttackDamageMaxLeft;
-    WORD MagicSpeed;
-    WORD MagicDamageMin;
-    WORD MagicDamageMax;
-    WORD CurseDamageMin;
-    WORD CurseDamageMax;
-    WORD CriticalDamage;
-    WORD SuccessfulBlocking;
-    WORD Defense;
-    WORD MagicDefense;
-    WORD WalkSpeed;
-    WORD LevelUpPoint;
-    BYTE SkillNumber;
-    BYTE SkillMasterNumber;
+    std::uint16_t wMinusPoint;
+    std::uint16_t wMaxMinusPoint;
+    std::uint16_t AttackSpeed;
+    std::uint16_t MaxAttackSpeed; // Maximum attack speed which can be reached on the server.
+    std::uint16_t AttackRating;
+    std::uint16_t AttackDamageMinRight;
+    std::uint16_t AttackDamageMaxRight;
+    std::uint16_t AttackDamageMinLeft;
+    std::uint16_t AttackDamageMaxLeft;
+    std::uint16_t MagicSpeed;
+    std::uint16_t MagicDamageMin;
+    std::uint16_t MagicDamageMax;
+    std::uint16_t CurseDamageMin;
+    std::uint16_t CurseDamageMax;
+    std::uint16_t CriticalDamage;
+    std::uint16_t SuccessfulBlocking;
+    std::uint16_t Defense;
+    std::uint16_t MagicDefense;
+    std::uint16_t WalkSpeed;
+    std::uint16_t LevelUpPoint;
+    std::uint8_t SkillNumber;
+    std::uint8_t SkillMasterNumber;
 
     uint64_t Experience;
     uint64_t NextExperience;
 
     ActionSkillType Skill[MAX_SKILLS];
     int  SkillDelay[MAX_SKILLS];
-    BYTE SkillLevel[MAX_SKILLS]; // Do we even need this array when we have the map of CSkillTreeInfo?
+    std::uint8_t SkillLevel[MAX_SKILLS]; // Do we even need this array when we have the map of CSkillTreeInfo?
 
     CSkillTreeInfo MasterSkillInfo[AT_SKILL_MASTER_END + 1]; // Index = ActionSkillType
     
@@ -537,10 +541,10 @@ typedef struct _MASTER_LEVEL_VALUE
     short      	nMLevelUpMPoint;
     short		nTotalMPoint;
     short		nMaxPoint;
-    DWORD		wMaxLife;
-    DWORD		wMaxMana;
-    DWORD		wMaxShield;
-    DWORD		wMaxBP;
+    std::uint32_t		wMaxLife;
+    std::uint32_t		wMaxMana;
+    std::uint32_t		wMaxShield;
+    std::uint32_t		wMaxBP;
 } MASTER_LEVEL_VALUE;
 
 //infomation end
@@ -615,8 +619,8 @@ typedef struct
     int			Type;
     int         TexType;
     int			SubType;
-    BYTE        RenderType;
-    BYTE        RenderFace;
+    std::uint8_t        RenderType;
+    std::uint8_t        RenderFace;
     float		Scale;
     vec3_t		Position;
     vec3_t      StartPosition;
@@ -625,19 +629,19 @@ typedef struct
     vec3_t		Light;
     OBJECT* Target;
     vec3_t      TargetPosition;
-    BYTE        byOnlyOneRender;
+    std::uint8_t        byOnlyOneRender;
     float  		LifeTime;
     bool        Collision;
     float		Velocity;
     vec3_t		Direction;
     short       PKKey;
-    WORD		Skill;
+    std::uint16_t		Skill;
     float		Weapon;
     float		MultiUse;
     bool        bTileMapping;
-    BYTE        m_byReverseUV;
+    std::uint8_t        m_byReverseUV;
     int			TargetIndex[5];
-    BYTE		m_bySkillSerialNum;
+    std::uint8_t		m_bySkillSerialNum;
     int			m_iChaIndex;
     short int	m_sTargetIndex;
 
@@ -653,9 +657,9 @@ typedef struct
 typedef struct
 {
     wchar_t Name[MAX_ID_SIZE + 1];
-    BYTE Number;
-    BYTE Server;
-    BYTE GuildStatus;
+    std::uint8_t Number;
+    std::uint8_t Server;
+    std::uint8_t GuildStatus;
 } GUILD_LIST_t;
 
 typedef struct
@@ -663,19 +667,19 @@ typedef struct
     int  Key;
     wchar_t UnionName[8 + 1];
     wchar_t GuildName[8 + 1];
-    BYTE Mark[64];
+    std::uint8_t Mark[64];
 } MARK_t;
 
 typedef struct
 {
     wchar_t    Name[MAX_ID_SIZE + 1];
-    BYTE    Number;
-    BYTE    Map;
-    BYTE    x;
-    BYTE    y;
+    std::uint8_t    Number;
+    std::uint8_t    Map;
+    std::uint8_t    x;
+    std::uint8_t    y;
     int     currHP;
     int     maxHP;
-    BYTE    stepHP;
+    std::uint8_t    stepHP;
     int     index;
 } PARTY_t;
 //inventory end
@@ -703,7 +707,7 @@ typedef struct
 {
     wchar_t	m_lpID[MAX_ID_SIZE];
     int		m_iScore;
-    DWORD	m_dwExp;
+    std::uint32_t	m_dwExp;
     int		m_iZen;
 } DevilSquareRank;
 //matchevent end
@@ -719,26 +723,26 @@ typedef struct
 //csquest start
 typedef struct
 {
-    BYTE    chLive;
-    BYTE    byQuestType;
-    WORD    wItemType;
-    BYTE    byItemSubType;
-    BYTE	byItemLevel;
-    BYTE    byItemNum;
-    BYTE    byRequestType;
-    BYTE    byRequestClass[MAX_CLASS];
+    std::uint8_t    chLive;
+    std::uint8_t    byQuestType;
+    std::uint16_t    wItemType;
+    std::uint8_t    byItemSubType;
+    std::uint8_t	byItemLevel;
+    std::uint8_t    byItemNum;
+    std::uint8_t    byRequestType;
+    std::uint8_t    byRequestClass[MAX_CLASS];
     short   shQuestStartText[4];
 } QUEST_CLASS_ACT;
 
 typedef struct
 {
-    BYTE    byLive;
-    BYTE    byType;
-    WORD    wCompleteQuestIndex;
-    WORD    wLevelMin;
-    WORD    wLevelMax;
-    WORD	wRequestStrength;
-    DWORD   dwZen;
+    std::uint8_t    byLive;
+    std::uint8_t    byType;
+    std::uint16_t    wCompleteQuestIndex;
+    std::uint16_t    wLevelMin;
+    std::uint16_t    wLevelMax;
+    std::uint16_t	wRequestStrength;
+    std::uint32_t   dwZen;
     short   shErrorText;
 } QUEST_CLASS_REQUEST;
 
@@ -746,7 +750,7 @@ typedef struct
 {
     short   shQuestConditionNum;
     short   shQuestRequestNum;
-    WORD	wNpcType;
+    std::uint16_t	wNpcType;
 
     wchar_t strQuestName[32];
 
@@ -756,8 +760,8 @@ typedef struct
 
 typedef struct
 {
-    BYTE    byFlag;
-    BYTE    byCount;
+    std::uint8_t    byFlag;
+    std::uint8_t    byCount;
 } QUEST_FLAG_BUFFER;
 
 typedef struct
@@ -771,28 +775,28 @@ typedef struct
 //csmapinterface start
 typedef struct
 {
-    BYTE    bIndex;
-    BYTE    x;
-    BYTE    y;
+    std::uint8_t    bIndex;
+    std::uint8_t    x;
+    std::uint8_t    y;
 }VisibleUnitLocation;
 
 typedef struct
 {
-    BYTE    byTeam;
-    BYTE    byX;
-    BYTE    byY;
-    BYTE    byCmd;
-    BYTE    byLifeTime;
+    std::uint8_t    byTeam;
+    std::uint8_t    byX;
+    std::uint8_t    byY;
+    std::uint8_t    byCmd;
+    std::uint8_t    byLifeTime;
 }GuildCommander;
 //csmapinterface end
 
 //cseventmatch start
 typedef struct
 {
-    BYTE	m_lpID[MAX_ID_SIZE];
-    DWORD	m_iScore;
-    DWORD	m_dwExp;
-    DWORD	m_iZen;
+    std::uint8_t	m_lpID[MAX_ID_SIZE];
+    std::uint32_t	m_iScore;
+    std::uint32_t	m_dwExp;
+    std::uint32_t	m_iZen;
 }MatchResult;
 //cseventmatch end
 
