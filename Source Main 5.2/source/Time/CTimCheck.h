@@ -1,7 +1,7 @@
 #pragma once
 
 #include <vector>
-#include "Singleton.h"
+#include MUCore/Singleton.h
 
 struct TimeCheck
 {

@@ -5,7 +5,7 @@
 //////////////////////////////////////////////////////////////////////////
 
 #include <cstdint>
-#include "Singleton.h"
+#include MUCore/Singleton.h
 
 class CMVP1STDirection
 {

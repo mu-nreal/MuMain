@@ -1,5 +1,5 @@
 #pragma once
-#include "Singleton.h"
+#include MUCore/Singleton.h
 
 #include <array>
 #include <cstdint>

@@ -8,7 +8,7 @@
 #include <array>
 #include <string>
 
-#include "Singleton.h"
+#include MUCore/Singleton.h
 
 struct MapServerInfo
 {
