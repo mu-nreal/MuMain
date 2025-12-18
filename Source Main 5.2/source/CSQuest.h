@@ -6,7 +6,7 @@
 #include <array>
 #include <cstdint>
 
-#include MUCore/Singleton.h
+#include "MUCore/Singleton.h"
 #include "MUCore/_enum.h"
 #include "MUCore/_struct.h"
 

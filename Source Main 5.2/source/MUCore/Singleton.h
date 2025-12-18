@@ -3,38 +3,51 @@
 //
 //
 //////////////////////////////////////////////////////////////////////////
-#ifndef __SINGLETON_H__
-#define __SINGLETON_H__
+#pragma once
 
-/*+++++++++++++++++++++++++++++++++++++
-    CLASS.
-+++++++++++++++++++++++++++++++++++++*/
+#include <cassert>
+
+// Lightweight CRTP singleton helper.
+// Usage: class CFoo : public Singleton<CFoo> { ... };
 template <typename T>
 class Singleton
 {
-    static T* _Singleton;
-
 public:
-    Singleton(void)
+    Singleton()
     {
-        if (_Singleton == 0)
+        assert(s_Instance == nullptr && "Singleton already created");
+        s_Instance = static_cast<T*>(this);
+    }
+
+    virtual ~Singleton()
+    {
+        if (s_Instance == this)
         {
-            _Singleton = static_cast<T*>(this);
+            s_Instance = nullptr;
         }
     }
 
-    virtual ~Singleton(void) {  /*assert( _Singleton );*/  _Singleton = 0; }
+    Singleton(const Singleton&) = delete;
+    Singleton& operator=(const Singleton&) = delete;
+    Singleton(Singleton&&) = delete;
+    Singleton& operator=(Singleton&&) = delete;
 
-    static T& GetSingleton(void) {  /*assert( _Singleton );*/  return (*_Singleton); }
-    static T* GetSingletonPtr(void) { return (_Singleton); }
-    static bool IsInitialized(void) { return _Singleton ? true : false; }
+    static T& GetSingleton()
+    {
+        assert(s_Instance != nullptr && "Singleton not created");
+        return *s_Instance;
+    }
 
-    //여기 부분은 좀 생각을 해보자..
-    //new로 만들어서 넣으면...delete를 해줘야 하는데...
-    //할려면 boost로 만들어진 data만 넣도록 하자.
-    //static void RegisterSingleton ( T* p ) { _Singleton = p; }
+    static T* GetSingletonPtr()
+    {
+        return s_Instance;
+    }
+
+    static bool IsInitialized()
+    {
+        return s_Instance != nullptr;
+    }
+
+protected:
+    static inline T* s_Instance = nullptr;
 };
-
-template <typename T> T* Singleton <T>::_Singleton = 0;
-
-#endif
