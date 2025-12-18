@@ -5,7 +5,7 @@
 #include <map>
 #include <string>
 
-#include "MUCore/_enum.h"
+#include "_enum.h"
 
 // Scalar and legacy vector aliases used across the client.
 using vec_t = float;
