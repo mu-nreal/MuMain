@@ -1,4 +1,4 @@
-// Local.h: interface for the Local
+// MUCore/Local.h: interface for the Local
 //////////////////////////////////////////////////////////////////////
 #pragma once
 

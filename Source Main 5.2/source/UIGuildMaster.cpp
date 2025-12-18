@@ -12,7 +12,7 @@
 #include "DSPlaySound.h"
 
 #include "NewUICommonMessageBox.h"
-#include "Local.h"
+#include "MUCore/Local.h"
 #include "NewUISystem.h"
 #include "ZzzInterface.h"
 

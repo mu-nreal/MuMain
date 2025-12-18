@@ -400,7 +400,7 @@
     <ClCompile Include="source\GuildCache.cpp">
       <Filter>MU\Client\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\Local.cpp">
+    <ClCompile Include="source\MUCore\Local.cpp">
       <Filter>MU\Client\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="source\MatchEvent.cpp">
@@ -1335,7 +1335,7 @@
     <ClInclude Include="source\iexplorer.h">
       <Filter>MU\Client\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\Local.h">
+    <ClInclude Include="source\MUCore\Local.h">
       <Filter>MU\Client\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\MatchEvent.h">

@@ -20,7 +20,7 @@
 
 #include "./Utilities/Debouncer.h"
 #include "CSQuest.h"
-#include "Local.h"
+#include "MUCore/Local.h"
 #include "PersonalShopTitleImp.h"
 #include "GOBoid.h"
 #include "CSItemOption.h"

@@ -1,4 +1,4 @@
-// Local.cpp: implementation of the Local
+// MUCore/Local.cpp: implementation of the Local
 //////////////////////////////////////////////////////////////////////
 
 #include "MUMain/stdafx.h"

@@ -12,7 +12,7 @@
 #include "DSPlaySound.h"
 #include "ZzzCharacter.h"
 #include "ZzzInterface.h"
-#include "Local.h"
+#include "MUCore/Local.h"
 
 #include "UIControls.h"
 

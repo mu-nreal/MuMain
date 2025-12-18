@@ -20,7 +20,7 @@
 #include "DSPlaySound.h"
 
 #include "SMD.h"
-#include "Local.h"
+#include "MUCore/Local.h"
 #include "MatchEvent.h"
 #include "PhysicsManager.h"
 

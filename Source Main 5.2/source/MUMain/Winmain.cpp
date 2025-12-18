@@ -27,7 +27,7 @@
 #include "MUMain/Resources/Windows/resource.h"
 #include <imm.h>
 #include "MUCore/ZzzPath.h"
-#include "Local.h"
+#include "MUCore/Local.h"
 #include "PersonalShopTitleImp.h"
 
 #include "UIMapName.h"		// rozy

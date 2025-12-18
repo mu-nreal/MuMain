@@ -9,7 +9,7 @@
 
 #include "ZzzInterface.h"
 #include "ZzzInventory.h"
-#include "Local.h"
+#include "MUCore/Local.h"
 #include "NewUISystem.h"
 
 extern MARK_t		GuildMark[MAX_MARKS];

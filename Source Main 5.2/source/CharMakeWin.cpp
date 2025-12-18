@@ -16,7 +16,7 @@
 #include "ZzzScene.h"
 #include "UIControls.h"
 
-#include "Local.h"
+#include "MUCore/Local.h"
 #include "CharacterManager.h"
 
 #include <algorithm>

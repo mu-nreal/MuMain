@@ -480,7 +480,7 @@
     <ClCompile Include="source\KeyGenerater.cpp" />
     <ClCompile Include="source\LoadData.cpp" />
     <ClCompile Include="source\LoadingScene.cpp" />
-    <ClCompile Include="source\Local.cpp" />
+    <ClCompile Include="source\MUCore\Local.cpp" />
     <ClCompile Include="source\LoginMainWin.cpp" />
     <ClCompile Include="source\LoginWin.cpp" />
     <ClCompile Include="source\MapManager.cpp" />
@@ -856,7 +856,7 @@
     <ClInclude Include="source\KeyGenerater.h" />
     <ClInclude Include="source\LoadData.h" />
     <ClInclude Include="source\LoadingScene.h" />
-    <ClInclude Include="source\Local.h" />
+    <ClInclude Include="source\MUCore\Local.h" />
     <ClInclude Include="source\LoginMainWin.h" />
     <ClInclude Include="source\LoginWin.h" />
     <ClInclude Include="source\MapManager.h" />
