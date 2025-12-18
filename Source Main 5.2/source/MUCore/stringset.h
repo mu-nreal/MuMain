@@ -1,118 +1,128 @@
-#ifndef _STRINGSET_H_
-#define _STRINGSET_H_
-
 #pragma once
 
-#pragma warning(disable : 4786)
-#include <string>
 #include <map>
+#include <string>
 
-namespace leaf {
+namespace leaf
+{
     template <class T>
     class TStringSet
     {
-        typedef std::basic_string<T, std::char_traits<T>, std::allocator<T> > string_type;
-        typedef std::map<int, string_type> string_map_type;
-        typedef string_map_type& string_map_referece;
-        typedef const string_map_type& string_map_const_referece;
-        typedef TStringSet<T>& referece_type;
-        typedef const TStringSet<T>& const_referece_type;
-
-        string_map_type	m_mapString;
-        const string_type m_strNone;
-
     public:
-        TStringSet() {}
-        TStringSet(const TStringSet<T>& _StringSet)
+        using string_type = std::basic_string<T, std::char_traits<T>, std::allocator<T>>;
+        using string_map_type = std::map<int, string_type>;
+
+        TStringSet() = default;
+        TStringSet(const TStringSet& other)
         {
-            for (auto const [x, key] : _StringSet.m_mapString) {
-                Add(x, key);
+            for (const auto& entry : other.m_mapString)
+            {
+                Add(entry.first, entry.second);
             }
         }
-        ~TStringSet() { RemoveAll(); }
+
+        ~TStringSet() = default;
+
+        TStringSet& operator=(const TStringSet& other)
+        {
+            if (this != &other)
+            {
+                m_mapString.clear();
+                for (const auto& entry : other.m_mapString)
+                {
+                    Add(entry.first, entry.second);
+                }
+            }
+            return *this;
+        }
 
         bool Add(int key, const T* szString)
         {
-            auto mi = m_mapString.find(key);
-            if (mi == m_mapString.end())
+            if (szString == nullptr)
             {
-                m_mapString.insert(typename string_map_type::value_type(key, szString));
-                return true;
+                return false;
             }
-            return false;
+
+            auto inserted = m_mapString.emplace(key, szString);
+            return inserted.second;
         }
+
         bool Add(int key, const string_type& strString)
         {
-            auto mi = m_mapString.find(key);
-            if (mi == m_mapString.end())
-            {
-                m_mapString.insert(typename string_map_type::value_type(key, strString));
-                return true;
-            }
-            return false;
+            auto inserted = m_mapString.emplace(key, strString);
+            return inserted.second;
         }
+
         bool Remove(int key)
         {
+            auto erased = m_mapString.erase(key);
+            return erased > 0;
+        }
+
+        void RemoveAll()
+        {
+            m_mapString.clear();
+        }
+
+        std::size_t GetCount() const
+        {
+            return m_mapString.size();
+        }
+
+        int GetKey(int index) const
+        {
+            if (index < 0 || static_cast<std::size_t>(index) >= m_mapString.size())
+            {
+                return -1;
+            }
+
+            auto it = m_mapString.begin();
+            std::advance(it, index);
+            return it->first;
+        }
+
+        const string_type& GetObj(int index) const
+        {
+            if (index < 0 || static_cast<std::size_t>(index) >= m_mapString.size())
+            {
+                return m_strNone;
+            }
+
+            auto it = m_mapString.begin();
+            std::advance(it, index);
+            return it->second;
+        }
+
+        const T* Find(int key) const
+        {
             auto mi = m_mapString.find(key);
             if (mi != m_mapString.end())
             {
-                m_mapString.erase(mi);
-                return true;
+                return mi->second.c_str();
             }
-            return false;
-        }
-        void RemoveAll() { m_mapString.clear(); }
-
-        size_t GetCount() { return m_mapString.size(); }
-        int GetKey(int index)
-        {
-            auto mi = m_mapString.begin();
-            for (int count = 0; mi != m_mapString.end(); mi++, count++)
-                if (count == index)
-                    return (*mi).first;
-            return -1;
-        }
-        const string_type& GetObj(int index)
-        {
-            auto mi = m_mapString.begin();
-            for (int count = 0; mi != m_mapString.end(); mi++, count++)
-                if (count == index)
-                    return (*mi).second;
-            return -1;
+            return nullptr;
         }
 
-        const T* Find(int key)
+        const string_type& FindObj(int key) const
         {
             auto mi = m_mapString.find(key);
             if (mi != m_mapString.end())
-                return ((*mi).second).c_str();
-            return NULL;
-        }
-        const string_type& FindObj(int key)
-        {
-            auto mi = m_mapString.find(key);
-            if (mi != m_mapString.end())
-                return (*mi).second;
+            {
+                return mi->second;
+            }
             return m_strNone;
         }
 
-        const T* operator [] (int index)
+        const T* operator[](int index) const
         {
-            return FindObj(index).c_str();
+            return GetObj(index).c_str();
         }
 
-        TStringSet<T>& operator = (const TStringSet<T>& _StringSet)
-        {
-            string_map_const_referece _ref = _StringSet.m_mapString;
-            auto mi = _ref.begin();
-            for (; mi != _ref.end(); mi++)
-                Add((*mi).first, (*mi).second);
-            return *this;
-        }
+    private:
+        string_map_type m_mapString;
+        string_type m_strNone{};
     };
 
-    typedef TStringSet<char>	CStringSet;
-    typedef TStringSet<wchar_t>	CStringSetW;
+    using CStringSet = TStringSet<char>;
+    using CStringSetW = TStringSet<wchar_t>;
 }
-
-#endif /* _STRINGSET_H_ */
