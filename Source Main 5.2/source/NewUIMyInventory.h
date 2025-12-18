@@ -12,7 +12,7 @@
 #include "NewUI3DRenderMng.h"
 #include "NewUIButton.h"
 #include "span.hpp"
-#include "_enum.h"
+#include "MUCore/_enum.h"
 
 namespace SEASON3B
 {

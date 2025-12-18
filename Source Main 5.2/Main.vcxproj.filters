@@ -1236,7 +1236,7 @@
     <ClInclude Include="source\MUCore\_define.h">
       <Filter>MU\Common</Filter>
     </ClInclude>
-    <ClInclude Include="source\_enum.h">
+    <ClInclude Include="source\MUCore\_enum.h">
       <Filter>MU\Common</Filter>
     </ClInclude>
     <ClInclude Include="source\_GlobalFunctions.h">

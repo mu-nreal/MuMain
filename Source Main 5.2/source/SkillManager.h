@@ -2,7 +2,7 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include "_enum.h"
+#include "MUCore/_enum.h"
 
 typedef struct DemendConditionInfo
 {

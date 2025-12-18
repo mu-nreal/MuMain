@@ -1053,7 +1053,7 @@
     <ClInclude Include="source\ZzzScene.h" />
     <ClInclude Include="source\ZzzTexture.h" />
     <ClInclude Include="source\MUCore\_define.h" />
-    <ClInclude Include="source\_enum.h" />
+    <ClInclude Include="source\MUCore\_enum.h" />
     <ClInclude Include="source\_GlobalFunctions.h" />
     <ClInclude Include="source\_struct.h" />
     <ClInclude Include="source\_TextureIndex.h" />

@@ -86,7 +86,7 @@
 
 // Client
 #include "MUCore/_define.h"
-#include "_enum.h"
+#include "MUCore/_enum.h"
 #include "_types.h"
 #include "_struct.h"
 #include "w_WindowMessageHandler.h"
