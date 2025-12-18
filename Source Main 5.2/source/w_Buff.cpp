@@ -215,14 +215,7 @@ void Buff::UnRegisterBuff(eBuffState buffstate)
 
     if (iter != m_Buff.end())
     {
-        DWORD& tempcount = (*iter).second;
-        {
-            m_Buff.erase(iter);
-        }
-    }
-    else
-    {
-        return;
+        m_Buff.erase(iter);
     }
 }
 
