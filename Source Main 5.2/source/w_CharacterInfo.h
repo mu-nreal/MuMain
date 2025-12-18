@@ -1,6 +1,6 @@
 #pragma once
 
-#include "SpinLock.h"
+#include MUCore/SpinLock.h
 
 typedef struct _PATH_t
 {
