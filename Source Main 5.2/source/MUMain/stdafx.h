@@ -91,7 +91,7 @@
 #include "MUCore/_struct.h"
 #include "w_WindowMessageHandler.h"
 #include "_GlobalFunctions.h"
-#include "_TextureIndex.h"
+#include "MUCore/_TextureIndex.h"
 #include "UIDefaultBase.h"
 #include "NewUICommon.h"
 #include "./Math/ZzzMathLib.h"

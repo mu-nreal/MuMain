@@ -1245,7 +1245,7 @@
     <ClInclude Include="source\MUCore\_struct.h">
       <Filter>MU\Common</Filter>
     </ClInclude>
-    <ClInclude Include="source\_TextureIndex.h">
+    <ClInclude Include="source\MUCore\_TextureIndex.h">
       <Filter>MU\Common</Filter>
     </ClInclude>
     <ClInclude Include="source\MUCore\_types.h">
