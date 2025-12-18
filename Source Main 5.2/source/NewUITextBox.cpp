@@ -5,7 +5,7 @@
 #include "MUMain/stdafx.h"
 #include "NewUITextBox.h"
 #include "UIControls.h"
-#include "UsefulDef.h"
+#include "MUCore/UsefulDef.h"
 
 
 using namespace SEASON3B;

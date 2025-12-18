@@ -7,7 +7,7 @@
 
 #include "MsgBoxIGSBuyPackageItem.h"
 
-#include "UsefulDef.h"
+#include "MUCore/UsefulDef.h"
 #include "DSPlaySound.h"
 #include "NewUISystem.h"
 #include "InGameShopSystem.h"

@@ -454,7 +454,7 @@
     <ClCompile Include="source\TextureScript.cpp">
       <Filter>MU\Client\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\UsefulDef.cpp">
+    <ClCompile Include="source\MUCore\UsefulDef.cpp">
       <Filter>MU\Client\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="source\ZzzAI.cpp">
@@ -1395,7 +1395,7 @@
     <ClInclude Include="source\TextureScript.h">
       <Filter>MU\Client\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\UsefulDef.h">
+    <ClInclude Include="source\MUCore\UsefulDef.h">
       <Filter>MU\Client\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\ZzzAI.h">

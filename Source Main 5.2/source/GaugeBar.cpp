@@ -13,7 +13,7 @@
 
 #include "GaugeBar.h"
 #include "Input.h"
-#include "UsefulDef.h"
+#include "MUCore/UsefulDef.h"
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction

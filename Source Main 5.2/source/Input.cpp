@@ -4,7 +4,7 @@
 
 #include "MUMain/stdafx.h"
 #include "Input.h"
-#include "UsefulDef.h"
+#include "MUCore/UsefulDef.h"
 #include "./Time/Timer.h"
 
 #include "UIManager.h"

@@ -8,7 +8,7 @@
 #include "DSPlaySound.h"
 #include "NewUISystem.h"
 
-#include "UsefulDef.h"
+#include "MUCore/UsefulDef.h"
 
 using namespace SEASON3B;
 

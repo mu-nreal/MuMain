@@ -5,7 +5,7 @@
 #ifndef _UI_BASE_DEF_H_
 #define _UI_BASE_DEF_H_
 
-#include "UsefulDef.h"
+#include "MUCore/UsefulDef.h"
 
 #define	CLRDW_WHITE			ARGB(255, 255, 255, 255)
 #define CLRDW_BR_GRAY		ARGB(255, 226, 226, 226)

@@ -7,7 +7,7 @@
 
 #include "Input.h"
 #include "Button.h"
-#include "UsefulDef.h"
+#include "MUCore/UsefulDef.h"
 
 #define	WE_CENTER_SPR_POS		3
 

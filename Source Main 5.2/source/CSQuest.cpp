@@ -25,7 +25,7 @@
 #include "ZzzInventory.h"
 
 #include "CSQuest.h"
-#include "UsefulDef.h"
+#include "MUCore/UsefulDef.h"
 #include "NewUIInventoryCtrl.h"
 #include "CharacterManager.h"
 #include "NewUISystem.h"
