@@ -1248,7 +1248,7 @@
     <ClInclude Include="source\_TextureIndex.h">
       <Filter>MU\Common</Filter>
     </ClInclude>
-    <ClInclude Include="source\_types.h">
+    <ClInclude Include="source\MUCore\_types.h">
       <Filter>MU\Common</Filter>
     </ClInclude>
     <ClInclude Include="source\MUMain\Resources\Windows\resource.h">
