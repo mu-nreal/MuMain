@@ -9,7 +9,7 @@
 #include "ZzzInterface.h"
 #include "ZzzInventory.h"
 #include "ZzzLodTerrain.h"
-#include "ZzzPath.h"
+#include "MUCore/ZzzPath.h"
 #include "ZzzAI.h"
 #include "ZzzTexture.h"
 #include "ZzzEffect.h"

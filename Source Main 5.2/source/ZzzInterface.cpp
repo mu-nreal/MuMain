@@ -17,7 +17,7 @@
 #include "ZzzOpenData.h"
 #include "ZzzEffect.h"
 #include "ZzzScene.h"
-#include "ZzzPath.h"
+#include "MUCore/ZzzPath.h"
 #include "DSPlaySound.h"
 
 

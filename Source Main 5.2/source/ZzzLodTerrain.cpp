@@ -10,7 +10,7 @@
 #include "ZzzOpenglUtil.h"
 #include "ZzzBMD.h"
 #include "ZzzLodTerrain.h"
-#include "ZzzPath.h"
+#include "MUCore/ZzzPath.h"
 #include "ZzzTexture.h"
 #include "ZzzInfomation.h"
 #include "ZzzObject.h"

@@ -487,7 +487,7 @@
     <ClCompile Include="source\ZzzOpenglUtil.cpp">
       <Filter>MU\Client\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\zzzpath.cpp">
+    <ClCompile Include="source\MUCore\zzzpath.cpp">
       <Filter>MU\Client\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="source\KeyGenerater.cpp">
@@ -1428,7 +1428,7 @@
     <ClInclude Include="source\ZzzOpenglUtil.h">
       <Filter>MU\Client\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\ZzzPath.h">
+    <ClInclude Include="source\MUCore\ZzzPath.h">
       <Filter>MU\Client\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\MUCore\Defined_Global.h">

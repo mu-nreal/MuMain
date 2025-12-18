@@ -713,7 +713,7 @@
     <ClCompile Include="source\ZzzOpenData.cpp" />
     <ClCompile Include="source\Random.cpp" />
     <ClCompile Include="source\ZzzOpenglUtil.cpp" />
-    <ClCompile Include="source\zzzpath.cpp" />
+    <ClCompile Include="source\MUCore\zzzpath.cpp" />
     <ClCompile Include="source\ZzzScene.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Global Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Global Release|x64'">MaxSpeed</Optimization>
@@ -1050,7 +1050,7 @@
     <ClInclude Include="source\ZzzObject.h" />
     <ClInclude Include="source\ZzzOpenData.h" />
     <ClInclude Include="source\ZzzOpenglUtil.h" />
-    <ClInclude Include="source\ZzzPath.h" />
+    <ClInclude Include="source\MUCore\ZzzPath.h" />
     <ClInclude Include="source\ZzzScene.h" />
     <ClInclude Include="source\ZzzTexture.h" />
     <ClInclude Include="source\MUCore\_define.h" />

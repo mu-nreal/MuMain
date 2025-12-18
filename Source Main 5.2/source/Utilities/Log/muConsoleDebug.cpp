@@ -16,7 +16,7 @@
 #include "ZzzTexture.h"
 #include "ZzzScene.h"
 #ifdef CSK_DEBUG_MAP_PATHFINDING
-#include "ZzzPath.h"
+#include "MUCore/ZzzPath.h"
 #endif // CSK_DEBUG_MAP_PATHFINDING
 
 CmuConsoleDebug::CmuConsoleDebug() : m_bInit(false)

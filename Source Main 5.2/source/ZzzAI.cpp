@@ -25,7 +25,7 @@
 #include "ZzzEffect.h"
 #include "ZzzScene.h"
 #include "DSPlaySound.h"
-#include "ZzzPath.h"
+#include "MUCore/ZzzPath.h"
 #include "CharacterManager.h"
 #include "SkillManager.h"
 
