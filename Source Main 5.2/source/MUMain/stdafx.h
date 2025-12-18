@@ -82,7 +82,7 @@
 // Patch
 // WinMain
 #include "Winmain.h"
-#include "Defined_Global.h"
+#include "MUCore/Defined_Global.h"
 
 // Client
 #include "MUCore/_define.h"

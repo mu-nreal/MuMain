@@ -764,7 +764,7 @@
     <ClInclude Include="source\CSPetSystem.h" />
     <ClInclude Include="source\CSQuest.h" />
     <ClInclude Include="source\CSWaterTerrain.h" />
-    <ClInclude Include="source\Defined_Global.h" />
+    <ClInclude Include="source\MUCore\Defined_Global.h" />
     <ClInclude Include="source\Dotnet\Connection.h" />
     <ClInclude Include="source\DSPlaySound.h" />
     <ClInclude Include="source\DSwaveIO.h" />

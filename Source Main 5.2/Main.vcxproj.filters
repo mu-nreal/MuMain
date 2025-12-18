@@ -1431,7 +1431,7 @@
     <ClInclude Include="source\ZzzPath.h">
       <Filter>MU\Client\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\Defined_Global.h">
+    <ClInclude Include="source\MUCore\Defined_Global.h">
       <Filter>MU\Client\core</Filter>
     </ClInclude>
     <ClInclude Include="source\MUMain\Winmain.h">
