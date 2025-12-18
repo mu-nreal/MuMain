@@ -319,7 +319,7 @@
     <ClCompile Include="source\WinEx.cpp">
       <Filter>MU\Interface\ui</Filter>
     </ClCompile>
-    <ClCompile Include="source\_GlobalFunctions.cpp">
+    <ClCompile Include="source\MUCore\_GlobalFunctions.cpp">
       <Filter>MU\Common</Filter>
     </ClCompile>
     <ClCompile Include="source\MUMain\StdAfx.cpp">
@@ -1239,7 +1239,7 @@
     <ClInclude Include="source\MUCore\_enum.h">
       <Filter>MU\Common</Filter>
     </ClInclude>
-    <ClInclude Include="source\_GlobalFunctions.h">
+    <ClInclude Include="source\MUCore\_GlobalFunctions.h">
       <Filter>MU\Common</Filter>
     </ClInclude>
     <ClInclude Include="source\MUCore\_struct.h">

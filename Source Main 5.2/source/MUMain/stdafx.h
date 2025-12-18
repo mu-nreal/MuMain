@@ -90,7 +90,7 @@
 #include "MUCore/_types.h"
 #include "MUCore/_struct.h"
 #include "w_WindowMessageHandler.h"
-#include "_GlobalFunctions.h"
+#include "MUCore/_GlobalFunctions.h"
 #include "MUCore/_TextureIndex.h"
 #include "UIDefaultBase.h"
 #include "NewUICommon.h"

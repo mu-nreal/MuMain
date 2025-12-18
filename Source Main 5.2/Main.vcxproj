@@ -725,7 +725,7 @@
       <FavorSizeOrSpeed Condition="'$(Configuration)|$(Platform)'=='Global Release|x64'">Speed</FavorSizeOrSpeed>
     </ClCompile>
     <ClCompile Include="source\ZzzTexture.cpp" />
-    <ClCompile Include="source\_GlobalFunctions.cpp" />
+    <ClCompile Include="source\MUCore\_GlobalFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="afxres.h" />
@@ -1055,7 +1055,7 @@
     <ClInclude Include="source\ZzzTexture.h" />
     <ClInclude Include="source\MUCore\_define.h" />
     <ClInclude Include="source\MUCore\_enum.h" />
-    <ClInclude Include="source\_GlobalFunctions.h" />
+    <ClInclude Include="source\MUCore\_GlobalFunctions.h" />
     <ClInclude Include="source\MUCore\_struct.h" />
     <ClInclude Include="source\MUCore\_TextureIndex.h" />
     <ClInclude Include="source\MUCore\_types.h" />
