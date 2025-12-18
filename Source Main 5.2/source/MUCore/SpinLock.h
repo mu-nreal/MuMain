@@ -1,19 +1,36 @@
 #pragma once
+
 #include <atomic>
 #include <thread>
 
-class SpinLock {
-    std::atomic_flag locked = ATOMIC_FLAG_INIT;
+// Lightweight spin lock for short critical sections.
+class SpinLock
+{
 public:
+    SpinLock() = default;
+    SpinLock(const SpinLock&) = delete;
+    SpinLock& operator=(const SpinLock&) = delete;
+    SpinLock(SpinLock&&) = delete;
+    SpinLock& operator=(SpinLock&&) = delete;
+
     void lock()
     {
-        while (locked.test_and_set(std::memory_order_acquire))
+        while (m_Locked.test_and_set(std::memory_order_acquire))
         {
+            std::this_thread::yield();
         }
+    }
+
+    bool try_lock()
+    {
+        return !m_Locked.test_and_set(std::memory_order_acquire);
     }
 
     void unlock()
     {
-        locked.clear(std::memory_order_release);
+        m_Locked.clear(std::memory_order_release);
     }
+
+private:
+    std::atomic_flag m_Locked = ATOMIC_FLAG_INIT;
 };

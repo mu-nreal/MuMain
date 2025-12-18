@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ZzzInfomation.h"
-#include MUCore/SpinLock.h
+#include "MUCore/SpinLock.h"
 
 struct HDC__;// Forward declaration to avoid pulling windows.h into headers
 typedef HDC__* HDC;
