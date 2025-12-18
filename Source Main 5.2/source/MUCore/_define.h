@@ -1,20 +1,22 @@
 #pragma once
 
+#include <cstdint>
 #include <memory>
+#include "Utilities/EnumFlags.h"
 
-#define Smart_Ptr( classname )  std::shared_ptr<classname>
-#define Weak_Ptr( classname )   std::weak_ptr<classname>
+#define Smart_Ptr(classname)    std::shared_ptr<classname>
+#define Weak_Ptr(classname)     std::weak_ptr<classname>
 
 #define SmartPointer(classname) \
-    class classname; \
+    class classname;            \
     typedef Smart_Ptr(classname) classname##Ptr
 
-#define PtrReset(p) { if(p) { p.reset(); } }
+#define PtrReset(p) { if (p) { p.reset(); } }
 
 //util
-#define SAFE_DELETE(p)  { if(p) { delete (p);     (p)=NULL; } }
-#define SAFE_DELETE_ARRAY(p)  { if(p) { delete [] (p);     (p)=NULL; } }
-#define SAFE_RELEASE(p) { if(p) { (p)->Release(); (p)=NULL; } }
+#define SAFE_DELETE(p)        { if (p) { delete (p);     (p) = nullptr; } }
+#define SAFE_DELETE_ARRAY(p)  { if (p) { delete [] (p);  (p) = nullptr; } }
+#define SAFE_RELEASE(p)       { if (p) { (p)->Release(); (p) = nullptr; } }
 #define DIRECTINPUT_VERSION	0x0500
 #define BYTECAST(T,X) static_cast<T>(X & 0xFF)
 
@@ -70,7 +72,7 @@ constexpr auto FACTOR_PATH_DIST_DIAG = ((int)((float)FACTOR_PATH_DIST * 1.414f))
 constexpr auto MAX_COUNT_PATH = 500;
 constexpr auto MAX_INT_FORPATH = (65000 * 30000);
 
-enum EPathNodeState : BYTE
+enum EPathNodeState : std::uint8_t
 {
     PATH_INTESTLIST = (0x01),
     PATH_TESTED = (0x02),
@@ -521,7 +523,7 @@ constexpr int ITEM_GROUP_ETC = 15;
 #define MAX_MAGIC					64
 
 //----------------------------------------------------------------------------
-// ÀúÇ×·Â ¹øÈ£
+// ï¿½ï¿½ï¿½×·ï¿½ ï¿½ï¿½È£
 #define RESISTANCE_COLD				0
 #define RESISTANCE_POISON			1
 #define RESISTANCE_THUNDER			2
